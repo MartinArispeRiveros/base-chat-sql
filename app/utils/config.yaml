@@ -1,0 +1,33 @@
+# config.yaml
+
+app:
+  name: RAG System
+  debug: true
+  version: 1.0.0
+
+database:
+  driver: mysql+mysqlconnector
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  user: ${DB_USER}
+  password: ${DB_PASS}
+  database_name: ${DB_NAME}
+  database_url: ${DATABASE_URL}
+
+llm:
+  provider: openai
+  api_key: ${OPENAI_API_KEY}
+  temperature: 0
+  max_tokens: 1500
+
+huggingface:
+  provider: huggingface
+  huggingface_token: ${HUGGINGFACE_TOKEN}
+  huggingface_url: ${HUGGINGFACE_API_URL}
+  temperature: 0
+  max_tokens: 1500
+
+files:
+  vector_store_folder: ${VECTOR_STORE_FOLDER}
+  vector_store_json: ${VECTOR_STORE_JSON}
+  files_folder: ${FILES_FOLDER}

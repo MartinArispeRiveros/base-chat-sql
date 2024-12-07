@@ -1,0 +1,163 @@
+@prefix data: <http://example.org/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix voc: <http://example.org/vocabulary/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+voc:files a rdfs:Class ;
+    rdfs:label "files"^^xsd:string .
+
+voc:house a rdfs:Class ;
+    rdfs:label "house"^^xsd:string .
+
+voc:person a rdfs:Class ;
+    rdfs:label "person"^^xsd:string .
+
+voc:pet a rdfs:Class ;
+    rdfs:label "pet"^^xsd:string .
+
+voc:vector_stores a rdfs:Class ;
+    rdfs:label "vector_stores"^^xsd:string .
+
+data:address a rdf:Property ;
+    rdfs:label "address"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+data:age a rdf:Property ;
+    rdfs:label "age"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+data:city a rdf:Property ;
+    rdfs:label "city"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+data:filename a rdf:Property ;
+    rdfs:label "filename"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+data:filepath a rdf:Property ;
+    rdfs:label "filepath"^^xsd:string ;
+    rdfs:range "text"^^xsd:string,
+        "varchar"^^xsd:string .
+
+<http://example.org/data/files/1> a voc:files ;
+    rdfs:label "Formas de Pago.pdf"^^xsd:string ;
+    data:filename "Formas de Pago.pdf"^^xsd:string ;
+    data:filepath "./files/Formas de Pago.pdf"^^xsd:string ;
+    data:filetype "pdf"^^xsd:string ;
+    data:id 1e+00 .
+
+<http://example.org/data/files/2> a voc:files ;
+    rdfs:label "Contacta con la universidad.pdf"^^xsd:string ;
+    data:filename "Contacta con la universidad.pdf"^^xsd:string ;
+    data:filepath "./files/Contacta con la universidad.pdf"^^xsd:string ;
+    data:filetype "pdf"^^xsd:string ;
+    data:id 2e+00 .
+
+data:filetype a rdf:Property ;
+    rdfs:label "filetype"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+data:gender a rdf:Property ;
+    rdfs:label "gender"^^xsd:string ;
+    rdfs:range "enum"^^xsd:string .
+
+<http://example.org/data/house/1> a voc:house ;
+    rdfs:label "123 Street"^^xsd:string ;
+    data:address "123 Street"^^xsd:string ;
+    data:city "City A"^^xsd:string ;
+    data:house_id 1e+00 ;
+    voc:has_person <http://example.org/data/person/1.0> .
+
+<http://example.org/data/house/2> a voc:house ;
+    rdfs:label "456 Avenue"^^xsd:string ;
+    data:address "456 Avenue"^^xsd:string ;
+    data:city "City B"^^xsd:string ;
+    data:house_id 2e+00 ;
+    voc:has_person <http://example.org/data/person/2.0> .
+
+<http://example.org/data/house/3> a voc:house ;
+    rdfs:label "789 Alley"^^xsd:string ;
+    data:address "789 Alley"^^xsd:string ;
+    data:city "City C"^^xsd:string ;
+    data:house_id 3e+00 ;
+    voc:has_person <http://example.org/data/person/nan> .
+
+data:house_id a rdf:Property ;
+    rdfs:label "house_id"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+data:id a rdf:Property ;
+    rdfs:label "id"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+data:name a rdf:Property ;
+    rdfs:label "name"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+data:owner_id a rdf:Property ;
+    rdfs:label "owner_id"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+<http://example.org/data/person/3> a voc:person ;
+    rdfs:label "Charles Ramirez"^^xsd:string ;
+    data:age 4e+01 ;
+    data:gender "M"^^xsd:string ;
+    data:name "Charles Ramirez"^^xsd:string ;
+    data:person_id 3e+00 .
+
+data:person_id a rdf:Property ;
+    rdfs:label "person_id"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+<http://example.org/data/pet/1> a voc:pet ;
+    rdfs:label "Firulais"^^xsd:string ;
+    data:age 5e+00 ;
+    data:name "Firulais"^^xsd:string ;
+    data:pet_id 1e+00 ;
+    data:type "Dog"^^xsd:string ;
+    voc:has_person <http://example.org/data/person/1> .
+
+<http://example.org/data/pet/2> a voc:pet ;
+    rdfs:label "Misi"^^xsd:string ;
+    data:age 2e+00 ;
+    data:name "Misi"^^xsd:string ;
+    data:pet_id 2e+00 ;
+    data:type "Cat"^^xsd:string ;
+    voc:has_person <http://example.org/data/person/2> .
+
+<http://example.org/data/pet/3> a voc:pet ;
+    rdfs:label "Rex"^^xsd:string ;
+    data:age 3e+00 ;
+    data:name "Rex"^^xsd:string ;
+    data:pet_id 3e+00 ;
+    data:type "Dog"^^xsd:string ;
+    voc:has_person <http://example.org/data/person/1> .
+
+data:pet_id a rdf:Property ;
+    rdfs:label "pet_id"^^xsd:string ;
+    rdfs:range "int"^^xsd:string .
+
+data:type a rdf:Property ;
+    rdfs:label "type"^^xsd:string ;
+    rdfs:range "varchar"^^xsd:string .
+
+<http://example.org/data/vector_stores/1> a voc:vector_stores ;
+    rdfs:label "./vector_stores/vector_store.json"^^xsd:string ;
+    data:filepath "./vector_stores/vector_store.json"^^xsd:string ;
+    data:id 1e+00 .
+
+<http://example.org/data/person/2> a voc:person ;
+    rdfs:label "Mary Lopez"^^xsd:string ;
+    data:age 2.5e+01 ;
+    data:gender "F"^^xsd:string ;
+    data:name "Mary Lopez"^^xsd:string ;
+    data:person_id 2e+00 .
+
+<http://example.org/data/person/1> a voc:person ;
+    rdfs:label "John Perez"^^xsd:string ;
+    data:age 3e+01 ;
+    data:gender "M"^^xsd:string ;
+    data:name "John Perez"^^xsd:string ;
+    data:person_id 1e+00 .
+
